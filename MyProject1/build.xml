@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MyProject1" default="MyProject1deply">
+
+	<target name="MyProject1deply" depends="delmyproject1">			
+				<exec  executable="D:\ATG\ATG10.2\home\bin\runAssembler.bat">
+					<arg line="-server atgpubserver D:\ATG\Oracle\Middleware\user_projects\domains\workspace\MyProject1.ear -m MyProject1" />
+				</exec>
+		<echo>My project 1 is completed</echo>
+			</target>
+<target name="delmyproject1">
+	<delete dir="D:\ATG\Oracle\Middleware\user_projects\domains\workspace\MyProject1.ear"></delete>	
+ </target>
+
+<target name="copymyproject1web">
+  <copy todir="D:\ATG\Oracle\Middleware\user_projects\domains\workspace\MyProject1.ear\myproject1-web.war">
+   <fileset dir="D:\ATG\ATG10.2\MyProject1\j2ee-apps\myproject1-j2ee\myproject1-web.war"></fileset>
+  </copy>
+	<echo>copying completed ...</echo>
+</target>
+	
+</project>
+<!-- @version $Id: //product/Eclipse/version/10.2/plugins/atg.project/templates/build.xml#1 $$Change: 735822 $ -->

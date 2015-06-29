@@ -1,0 +1,19 @@
+JAVA_HOME=C:\Program Files\Java\jdk1.7.0_15
+CLASSPATH=C:\Program Files\Java\jdk1.7.0_15\bin
+JBOSS_HOME=
+JBOSS_VERSION=
+PATH=%JAVA_HOME%\bin;%JBOSS_HOME%\bin;%DYNAMO_HOME%\bin;
+ATGJRE=C:\Program Files\Java\jdk1.7.0_15\bin\java
+
+http://docslide.us/documents/atgintro.html
+http://immuraliraj.blogspot.in/2011/12/how-to-use-atg-rest-for-self-service.html
+REST-----------
+http://docs.oracle.com/cd/E24152_01/Platform.10-1/ATGWSFrameGuide/html/s1705examplerestwebservicesjsp01.html
+http://docs.oracle.com/cd/E41069_01/Platform.11-0/ATGWSFrameGuide/html/s0101creatingandusingwebservicesinthe01.html
+
+file:///D:/ATG/ATG.doc/E36434_01/E36434_01/Platform.10-1-2/ATGPlatformProgGuide/html/s0204creatinganucleuscomponent01.html
+
+bin/startSQLRepository -m MyProject1 -export all employee.xml  -repository /pc/atg/EmployeeRepository
+
+import content ---
+startSQLRepository -m MyProject1 -import D:\ATG\ATG10.2\MyProject1\config\pc\atg\employee.xml   -repository /pc/atg/EmployeeRepository

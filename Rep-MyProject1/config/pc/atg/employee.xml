@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template SYSTEM "dynamosystemresource:/atg/dtds/gsa/gsa_1.0.dtd">
+<gsa-template>
+<import-items>
+<!-- 4 items of type employee -->
+
+<add-item item-descriptor="employee" id="111">
+  <set-property name="city"><![CDATA[HRI]]></set-property>
+  <set-property name="salary"><![CDATA[19999.0]]></set-property>
+  <set-property name="name"><![CDATA[Phool chandra1]]></set-property>
+</add-item>
+
+<add-item item-descriptor="employee" id="112">
+  <set-property name="city"><![CDATA[LKO]]></set-property>
+  <set-property name="salary"><![CDATA[50000.0]]></set-property>
+  <set-property name="name"><![CDATA[Phool chandra221]]></set-property>
+</add-item>
+
+<add-item item-descriptor="employee" id="113">
+  <set-property name="city"><![CDATA[Noida]]></set-property>
+  <set-property name="salary"><![CDATA[2000.0]]></set-property>
+  <set-property name="name"><![CDATA[Phool chandra3331]]></set-property>
+</add-item>
+
+<add-item item-descriptor="employee" id="114">
+  <set-property name="city"><![CDATA[Delhi]]></set-property>
+  <set-property name="salary"><![CDATA[30000.0]]></set-property>
+  <set-property name="name"><![CDATA[Phool chandra3331]]></set-property>
+</add-item>
+
+</import-items>
+
+</gsa-template>

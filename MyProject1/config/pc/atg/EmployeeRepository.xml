@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE gsa-template
+  PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Security//EN"
+         "http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+    <header>
+      <name>Employee</name>
+      <author>Phool Chandra</author>
+      <description>
+        Employee Record addition
+      </description>
+    </header>
+
+    <item-descriptor name="employee" default="true">
+       <table name="employee" type="primary" id-column-names="id">
+          <property name="id" data-type="string"/>
+          <property name="name" column-names="name" data-type="string"/>
+          <property name="city" column-names="city" data-type="string"/>
+          <property name="salary" column-names="salary" data-type="double"/>
+       </table>
+    </item-descriptor>
+</gsa-template>
