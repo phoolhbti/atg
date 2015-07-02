@@ -1,6 +1,6 @@
 <%@ taglib uri="/dspTaglib" prefix="dsp" %>
 <dsp:page>
-<dsp:importbean bean="/dyanmusic/EmployeeFormHandler"/>
+<dsp:importbean bean="/pc/atg/EmployeeFormHandler"/>
 
 <HTML>
   <HEAD>
@@ -37,21 +37,21 @@
                  <table cellspacing="10">
                  	<tr>
                  		<td valing="middle">Name:</td>
-                 		<td valing="middle"><dsp:input bean="/dynamusic/EmployeeFormHandler.value.name" name="name" size="24" type="text" requird="<%=true%>"></dsp:input></td>
+                 		<td valing="middle"><dsp:input bean="EmployeeFormHandler.value.name" name="name" size="24" type="text" requird="<%=true%>"></dsp:input></td>
                  	</tr>
                  	<tr>
                  		<td valing="middle">City:</td>
-                 		<td valing="middle"><dsp:input bean="/dynamusic/EmployeeFormHandler.value.city" name="city" size="24" type="text"></dsp:input></td>
+                 		<td valing="middle"><dsp:input bean="EmployeeFormHandler.value.city" name="city" size="24" type="text"></dsp:input></td>
                  	</tr>
                  	<tr>
                  		<td valing="middle">Salary:</td>
-                 		<td valing="middle"><dsp:input bean="/dynamusic/EmployeeFormHandler.value.salary" name="salary" size="24" type="text" ></dsp:input></td>
+                 		<td valing="middle"><dsp:input bean="EmployeeFormHandler.value.salary" name="salary" size="24" type="text" ></dsp:input></td>
                  	</tr>
                  	<tr>
                  		<td>&nbsp;</td>
                  		<td>
-                 		<dsp:input bean="/dynamusic/EmployeeFormHandler.create" type="submit" value="Create New Employee"/>
-                 		<dsp:input bean="/dynamusic/EmployeeFormHandler.createSuccessURL" type="hidden" value="empindex.jsp"/>
+                 		<dsp:input bean="EmployeeFormHandler.create" type="submit" value="Create New Employee"/>
+                 		<dsp:input bean="EmployeeFormHandler.createSuccessURL" type="hidden" value="empindex.jsp"/>
                  		</td>
                  		
                  	</tr>
