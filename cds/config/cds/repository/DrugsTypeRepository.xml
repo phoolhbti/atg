@@ -1,0 +1,105 @@
+<!DOCTYPE gsa-template PUBLIC "-//Art Technology Group, Inc.//DTD Dynamo Security//EN" 
+"http://www.atg.com/dtds/gsa/gsa_1.0.dtd">
+
+<gsa-template>
+
+  <header>
+    <name>DrugsTypeRepository</name>
+    <author>Phool Chandra</author>
+    <description> 
+        This file defines the drug repository for the CDS             
+    </description>
+  </header>
+  
+  <item-descriptor name="BasicDrugInfo" display-property="name">
+    <table name="cds_basic_drug_information" 
+           type="primary" 
+           id-column-name="Drug_ID"> 
+      <property name="Drug_ID" data-type="string"/>
+      <property name="brandName" column-name="BrandName" data-type="string"/>       
+      <property name="genericName" column-name="GenericName" data-type="string"/>  
+      <property name="dosageUnitNum" column-name="DosageUnit_Num" data-type="float"/>
+      <property name="dosageUnit" column-name="DosageUnit_Unit" data-type="string"/>
+      <property name="drugVolume" column-name="drugVolume" data-type="float"/>
+       <property name="noOfAdmin" column-name="noOfAdmin" data-type="int"/>
+       <property name="alkFlag" column-name="ALK_Flag" data-type="boolean"/>
+      <property name="iodFlag" column-name="IOD_Flag" data-type="boolean"/>
+      <property name="ndgFlag" column-name="NDG_Flag" data-type="boolean"/>
+      <property name="btgFlag" column-name="BTG_Flag" data-type="boolean"/>
+      <property name="ktgFlag" column-name="KTG_Flag" data-type="boolean"/>
+    </table> 
+  </item-descriptor>
+
+  <item-descriptor name="DrugPartInfo" display-property="name">
+    <table name="cds_drug_part_information" 
+           type="primary" 
+           id-column-name="drugPartId"> 
+      <property name="drugPartId" column-name="DrugPart_ID" data-type="int"/>
+      <property name="drugPartName" column-name="DrugPart_Name" data-type="string"/>  
+      <property name="drugPartVolume" column-name="drugPart_Volume" data-type="flot"/>  
+      <property name="drugId" column-name="Drug_ID" item-type="BasicDrugInfo"/>  
+    </table> 
+  </item-descriptor>
+
+  <item-descriptor name="saltHydrateEasterMaster" display-property="name">
+    <table name="cds_salt_hydrate_easter_master" 
+           type="primary" 
+           id-column-name="SHE_ID"> 
+      <property name="sheId" data-type="string"/>
+      <property name="sheType" column-name="SHE_TYPE" data-type="string"/>  
+      <property name="sheName" column-name="SHE_NAME" data-type="string"/>       
+    </table> 
+  </item-descriptor>
+ <item-descriptor name="radioIsotopMaster" display-property="name">
+    <table name="cds_radio_isotop_master" 
+           type="primary" 
+           id-column-name="RIE_ID"> 
+      <property name="rieId" data-type="string"/>        
+      <property name="rieName" column-name="RIE_NAME" data-type="string"/>  
+      <property name="rieParentNuclideName" column-name="RIE_ParentNuclideName" data-type="string"/>     
+    </table> 
+  </item-descriptor>
+	 <item-descriptor name="activeIngredientMaster" display-property="name">
+    <table name="cds_activ_ingredient_master" 
+           type="primary" 
+           id-column-name="AIT_ID"> 
+       <property name="aitId" data-type="string"/> 
+      <property name="aitName" column-name="AIT_Name" data-type="string"/>
+      <property name="aitAbbevName" column-name="AIT_Abbreviated_Name" data-type="string"/>
+      <property name="aitMolFormula" column-name="AIT_Molecular_Formula" data-type="string"/>
+      <property name="aitMatrialName" column-name="AIT_Matrial_Name" data-type="string"/>
+      <property name="aitRecombFlag" column-name="AIT_Recombinant_Flag" data-type="boolean"/>
+      <property name="aitAntFXAA" column-name="AIT_AntFXAActivity_Flag" data-type="boolean"/>  
+      <property name="aitEnami" column-name="AIT_EnantiomerInformation" data-type="string"/>
+      <property name="aitFlag" column-name="RIE_Flag" data-type="boolean"/>
+      <property name="rieId" column-name="RIE_ID" item-type="radioIsotopMaster"/>
+      <property name="sheFlag" column-name="SHE_Flag" data-type="boolean"/> 
+      <property name="sheId" column-name="SHE_ID" item-type="saltHydrateEasterMaster"/> 
+      <property name="batFlag" column-name="BAT_Flag" data-type="boolean"/>
+    </table> 
+  </item-descriptor>
+  <item-descriptor name="activeIngredientInformation" display-property="name">
+    <table name="cds_activ_ingredient_information" 
+           type="primary" 
+           id-column-name="AIT_ID"> 
+       <property name="aitId" data-type="string"/> 
+       <property name="drugId" column-name="Drug_ID" item-type="BasicDrugInfo"/>
+      <property name="drugPartId" column-name="DrugPart_ID" item-type="DrugPartInfo"/>
+      <property name="aidId" column-name="AIT_ID" item-type="activeIngredientMaster"/>  
+        <property name="aitMaxCOT" column-name="AIT_MaxCOT" data-type="float"/>  
+         <property name="aitMinCOT" column-name="AIT_MinCOT" data-type="float"/>  
+          <property name="aitCOTPerAdmin" column-name="AIT_COTPerAdmin" data-type="float"/>  
+           <property name="sheMinCOT" column-name="SHE_MinCOT" data-type="float"/> 
+           <property name="sheMaxCOT" column-name="SHE_MaxCOT" data-type="float"/>   
+    </table> 
+  </item-descriptor>
+   <item-descriptor name="activeIngredientAliasName" display-property="name">
+    <table name="cds_activ_ingredient_alias_name_master" 
+           type="primary" 
+           id-column-name="id"> 
+      <property name="id" data-type="string"/>        
+      <property name="aitId" column-name="AIT_ID" item-type="activeIngredientMaster"/>  
+      <property name="aitAliasName" column-name="AIT_AliasName" data-type="string"/>     
+    </table> 
+  </item-descriptor>
+</gsa-template>
