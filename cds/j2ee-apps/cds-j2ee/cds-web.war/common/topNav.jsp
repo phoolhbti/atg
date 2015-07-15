@@ -31,6 +31,7 @@
                              </dsp:oparam>
                             </dsp:droplet>
           </ul>
+          <dsp:include page="search.jsp"></dsp:include>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
