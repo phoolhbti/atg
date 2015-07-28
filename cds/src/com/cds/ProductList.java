@@ -14,7 +14,7 @@ public class ProductList extends GenericService {
 	private String itemDescriptor;
 	private int howMany;
 	private boolean random;
-	private List<String> products;
+	private List<Product> products;
 	private String[] productIds;
 	
 	//bean property: repository
@@ -63,18 +63,18 @@ public class ProductList extends GenericService {
 	public void setProductIds(String[] productIds) {
 		this.productIds = productIds;
 		if (products==null)
-			products = new ArrayList <String> ();
+			products = new ArrayList <Product> ();
 		if (isLoggingDebug())
 			logDebug("setProductIds called -- emptying and reloading featured product titles.");
 		products.clear();
 		loadProducts();
 	}
 	//bean property: songs
-	public List<String> getProducts() {
+	public List<Product> getProducts() {
 		if (products==null) {
 			if (isLoggingDebug())
 				logDebug("getProducts called for first time -- loading featured product titles now.");	
-			products = new ArrayList <String> ();
+			products = new ArrayList <Product> ();
 			loadProducts();
 		}
 		// if random is true, shuffle the List
@@ -82,7 +82,7 @@ public class ProductList extends GenericService {
 			Collections.shuffle(products);
 		
 		//copy first howMany of the products into FeaturedSongs and return them
-		List<String> featuredProducts = new ArrayList<String>();
+		List<Product> featuredProducts = new ArrayList<Product>();
 		int numReturned = 0;
 		for (int i=0;i < getHowMany() && i < products.size();i++) {
 			featuredProducts.add(i, products.get(i));	
@@ -92,7 +92,7 @@ public class ProductList extends GenericService {
 			logDebug("getProducts called, returning " + numReturned + " product titles.");	
 		return featuredProducts;
 	}
-	public void setProducts(List<String> products) {
+	public void setProducts(List<Product> products) {
 		if (isLoggingDebug())
 			logDebug("setProducts called with " + products);
 		this.products = products;
@@ -117,7 +117,12 @@ public class ProductList extends GenericService {
 		for(int i=0;i<productIds.length;i++) {
 			currentProduct = getRepository().getItem(productIds[i],"product");
 			if (currentProduct!=null) {
-				products.add((String) currentProduct.getPropertyValue("name"));	
+				Product prod=new Product();
+				prod.setName((String) currentProduct.getPropertyValue("name"));
+				prod.setPrice((String) currentProduct.getPropertyValue("price"));
+				prod.setShortdescription((String) currentProduct.getPropertyValue("shortdescription"));	
+				prod.setProductId((String) currentProduct.getPropertyValue("product_id"));
+				products.add(prod);	
 				//products.add((String) currentProduct.getPropertyValue("price"));	
 			} else {
 				if (isLoggingError())
