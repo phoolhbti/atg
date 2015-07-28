@@ -15,7 +15,30 @@
             <!-- Catagery  end. -->
              <div class="col-md-9">
               <div class="row">
-             <dsp:include page="common/featuredProduct.jsp"></dsp:include>
+			 Hello world..22. <dsp:valueof param="categoryId"/><br/>
+			 <dsp:getvalueof var="omap" param="productIds"/>
+			 <dsp:droplet name="/atg/dynamo/droplet/ForEach">				
+				 <dsp:param name="array" value={omap}/>
+				<dsp:oparam name="outputStart">
+				<ul>
+				</dsp:oparam>
+				<dsp:oparam name="outputEnd">
+				</ul>
+				</dsp:oparam>
+				<dsp:oparam name="output">
+				 Key:: <dsp:valueof param="key" /> <br />
+   Value :: <dsp:valueof param="element" /> <br /> 
+				</dsp:oparam>
+				<dsp:oparam name="empty">
+					No concerts found for this venue.
+				</dsp:oparam>
+				<dsp:valueof param="count"/> 
+			</dsp:droplet>
+			 
+<dsp:valueof param="productIds"/>			 
+			<dsp:droplet name="/cds/droplet/CategoryProductDroplet">				
+			</dsp:droplet>
+			 
              </div>
 		</div>
 	</div>
