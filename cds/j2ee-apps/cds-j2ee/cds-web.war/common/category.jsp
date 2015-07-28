@@ -13,7 +13,7 @@
               </div>
             </dsp:oparam>
             <dsp:oparam name="output">             
-                <dsp:a href="albumDetails.jsp" iclass="list-group-item">
+                <dsp:a href="../categoryList.jsp" iclass="list-group-item">
                   <dsp:param name="itemId" param="element.id" />
                   <dsp:valueof param="element.name"/>
                 </dsp:a>  
