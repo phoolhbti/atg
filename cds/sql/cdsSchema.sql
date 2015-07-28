@@ -22,15 +22,16 @@
         product_list               INT(11)     not null references cds_product(product_id),
         primary key(category_id, product_list)
 );
-		CREATE TABLE cds_users (
-       	user_id                 VARCHAR(255) references dps_user(id),
-        info 					VARCHAR(255),
-		address					VARCHAR(255),	
-		phone					VARCHAR(255),
-		types					VARCHAR(255),
-		primary key(user_id)
-		);
-		
+		CREATE TABLE cds_user (
+			user_id VARCHAR(32) not null references dps_user(id),
+			info LONG VARCHAR null,
+			share_profile NUMERIC(1) null,
+			subscriber NUMERIC(1) null,
+			CHECK (share_profile in (0, 1)),
+			primary key(user_id)
+);
+	
+-- final tables
 		CREATE TABLE cds_category_product(
     	 category_id    VARCHAR(32)  not null references cds_category(category_id),
      	 product_id   VARCHAR(32)  not null,
