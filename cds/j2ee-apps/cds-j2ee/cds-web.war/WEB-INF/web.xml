@@ -134,7 +134,7 @@
   </servlet-mapping>
 
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>home.jsp</welcome-file>
   </welcome-file-list>
 
   <!-- Use the DSP Tag library in your jsp pages -->
@@ -148,6 +148,8 @@
 		<jsp-property-group>
 			<url-pattern>*.jsp</url-pattern>
 			<include-prelude>/common/prelude.jspf</include-prelude>
+			<el-enabled>true</el-enabled>
+    		<scripting-enabled>true</scripting-enabled>
 		</jsp-property-group>
 	</jsp-config>
 </web-app>
