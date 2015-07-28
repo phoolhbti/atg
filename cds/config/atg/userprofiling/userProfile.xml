@@ -1,0 +1,14 @@
+<!-- This file provides a starting point for extending the profile repository. 
+	The comments below coincide with the instructions in the lab. -->
+
+<gsa-template>
+
+	<item-descriptor name="user" >
+		<table name="cds_user" type="auxiliary" id-column-name="user_id">
+			<property name="info" data-type="string" column-name="info" category="cds" />
+			<property name="shareProfile" data-type="boolean"  column-name="share_profile" category="cds" />
+			<property name="subscriber" column-names="subscriber" data-type="boolean" category="cds" />			
+		</table>		
+	</item-descriptor>
+
+</gsa-template>
