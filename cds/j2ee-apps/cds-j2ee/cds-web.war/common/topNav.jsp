@@ -14,8 +14,8 @@
         
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li class="active"><a href="\cds">Home</a></li>
+            <li><a href="productlist.jsp">Products</a></li>
             <li><a href="#contact">Contact</a></li>            
           </ul>
           <ul class="nav navbar-nav navbar-right">
