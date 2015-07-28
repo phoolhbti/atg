@@ -11,7 +11,7 @@
     <title><dsp:valueof param="pagename"></dsp:valueof></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./styles/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles/bootstrap.css" rel="stylesheet">
     <!-- Bootstrap theme -->
     <link href="./styles/bootstrap-theme.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
